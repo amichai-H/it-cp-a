@@ -6,7 +6,6 @@
 #define ITERTOOLS_CFAR_A_MASTER_RANGE_HPP
 
 #include <iterator>
-#include "iter.hpp"
 namespace itertools {
 
     class range {

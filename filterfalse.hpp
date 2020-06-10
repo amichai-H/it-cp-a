@@ -14,7 +14,7 @@ namespace itertools {
         VAC data;
         FUNC func;
     public:
-        explicit filterfalse(VAC x,FUNC f) : data(x), func(f) {}
+        explicit filterfalse(FUNC f,VAC x) : data(x), func(f) {}
         class iterator{
             typename VAC::iterator _iter;
             typename VAC::iterator _it_end;
@@ -22,7 +22,7 @@ namespace itertools {
         public:
             explicit iterator(typename VAC::iterator it, typename VAC::iterator end, FUNC func)
                     : _iter(it), _it_end(end), _it_func(func){
-                while (_iter != _end && _f(*_iter))
+                while (_iter != _it_end && _it_func(*_iter))
                     ++_iter;
             };
             iterator(const iterator& other) = default;
@@ -52,7 +52,7 @@ namespace itertools {
             }
 
             auto operator*(){
-                return _it_data;
+                return *_iter;
             }
         };
 

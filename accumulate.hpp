@@ -46,7 +46,7 @@ namespace itertools {
             iterator operator++(int){
                 iterator temp = *this;
                 ++(*this);
-                return tenp;
+                return temp;
             }
             bool operator==(const iterator& other) {
                 return (_iter == other._iter);
